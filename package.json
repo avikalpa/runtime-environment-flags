@@ -1,0 +1,31 @@
+{
+  "name": "@avikalpa/environment",
+  "version": "1.2.0",
+  "description": "Runtime environment flags for JavaScript: isNode and isBrowser.",
+  "main": "index.js",
+  "type": "commonjs",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "bun test"
+  },
+  "author": "Avikalpa Kundu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avikalpa/runtime-environment-flags.git"
+  },
+  "homepage": "https://github.com/avikalpa/runtime-environment-flags#readme",
+  "bugs": {
+    "url": "https://github.com/avikalpa/runtime-environment-flags/issues"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
+  }
+}
