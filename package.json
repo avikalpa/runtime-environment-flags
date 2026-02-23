@@ -18,7 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/avikalpa/runtime-environment-flags.git"
+    "url": "git+https://github.com/avikalpa/runtime-environment-flags.git"
   },
   "homepage": "https://github.com/avikalpa/runtime-environment-flags#readme",
   "bugs": {
