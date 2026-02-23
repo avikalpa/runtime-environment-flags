@@ -2,8 +2,10 @@
 
 Tiny runtime flags for JavaScript environments.
 
-- `isNode`: `true` when running in Node.js.
-- `isBrowser`: `true` when browser globals (`window` and `document`) exist and Node.js is not detected.
+- `isNode`: `true` in Node.js.
+- `isBrowser`: `true` in browser main thread.
+- `isWorker`: `true` in web worker/service worker-like runtimes.
+- `runtime`: `'node' | 'browser' | 'worker' | 'unknown'`.
 
 ## Install
 
@@ -17,17 +19,24 @@ npm i @avikalpa/environment
 const Environment = require('@avikalpa/environment');
 
 if (Environment.isBrowser) {
-  requestAnimationFrame(() => {
-    // browser-only code
-  });
+  // browser-only code
 }
 
 if (Environment.isNode) {
   // node-only code
-  const buf = Buffer.from('ok');
-  console.log(buf.toString());
 }
+
+console.log(Environment.runtime);
 ```
+
+## Runtime Table
+
+| Environment | isNode | isBrowser | isWorker | runtime |
+| --- | --- | --- | --- | --- |
+| Node.js | true | false | false | `node` |
+| Browser main thread | false | true | false | `browser` |
+| Worker | false | false | true | `worker` |
+| Unknown/other | false | false | false | `unknown` |
 
 ## Test
 
@@ -38,6 +47,14 @@ bun test
 ## Changelog
 
 See [`CHANGELOG.md`](./CHANGELOG.md).
+
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+
+## Security
+
+See [`SECURITY.md`](./SECURITY.md).
 
 ## License
 
